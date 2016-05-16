@@ -1,5 +1,7 @@
 def fizzbuzz(number)
-	case 
+	 
+	if number.is_a? Integer
+		case 
 		when number < 0 
 			return "Please enter a positive integer"
 		when (number % 3 == 0) && (number % 5 == 0)
@@ -11,4 +13,9 @@ def fizzbuzz(number)
 		else 
 			return number
 		end
+	elsif number.is_a? Float
+		return "Please enter positive integer not a float"
+	else
+		return "Please enter a positive integer"
+	end
 end
