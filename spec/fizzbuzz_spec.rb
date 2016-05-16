@@ -17,6 +17,9 @@ describe 'fizzbuzz' do
 		expect(fizzbuzz(15)).to eq "fizzbuzz"
 	end
 	it "handles any number that isnt fizz or buzz" do
-	non_divisable_array.each do |num| expect(fizzbuzz(num)).to eq num end 
+		non_divisable_array.each do |num| expect(fizzbuzz(num)).to eq num end 
+	end
+	it "rejects negatives" do
+		expect(fizzbuzz(-1)).to eq "Please enter a positive integer"
 	end
 end
