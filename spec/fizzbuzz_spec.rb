@@ -1,6 +1,6 @@
 require "fizzbuzz"
 
-non_divisable_array = (1..10000).to_a.reject {|num| (num % 3 == 0) || (num % 5 == 0)}
+non_divisable_array = (0..10000).to_a.reject {|num| (num % 3 == 0) || (num % 5 == 0)}
 
 
 describe 'fizzbuzz' do
@@ -21,5 +21,9 @@ describe 'fizzbuzz' do
 	end
 	it "rejects negatives" do
 		expect(fizzbuzz(-1)).to eq "Please enter a positive integer"
+	end
+	it "rejects non integers" do
+	expect(fizzbuzz("hello world")).to eq "Please enter a positive integer"
+	expect(fizzbuzz(8.3)).to eq "Please enter positive integer not a float"
 	end
 end
